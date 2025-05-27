@@ -1,0 +1,95 @@
+.background {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(
+    127deg,
+    rgba(255, 37, 37, 1) 0%,
+    rgba(255, 0, 0, 1) 12%,
+    rgba(255, 212, 212, 1) 53%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 1; /* Coloca el contenido por encima del video */
+  text-align: center;
+  color: white; /* Ajusta el color según sea necesario */
+}
+
+h1 {
+  padding: 1rem;
+  color: black;
+  background-color: #ff9090;
+  box-shadow: 0 0 5px black;
+  width: 20%;
+  margin: auto;
+  border-radius: 10px;
+  font-weight: 800;
+  margin-top: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 2px black;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  font-family: "Quicksand";
+  font-size: 1.5rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  margin-top: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 2px black;
+}
+
+/* Archivo de estilos del componente (user-table.component.scss) */
+
+.table-container {
+  width: 80%; /* Ajusta el porcentaje según sea necesario */
+  margin: 50px auto; /* Centra la tabla horizontalmente */
+  overflow-y: auto;
+  max-height: 500px;
+  scrollbar-width: thin;
+}
+
+.table {
+  border: 1px solid black;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.transparent {
+  background-color: rgba(255, 255, 255, 0.6); /* Blanco con 80% opacidad */
+}
+
+.header {
+  background-color: rgba(98, 0, 234, 0.8); /* Color morado con 80% opacidad */
+  color: #000000;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.mat-cell {
+  padding: 16px;
+}
+
+.cell {
+  font-size: 1rem;
+}
+
+.mat-row:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Gris claro con 10% opacidad */
+}
+
+.mat-paginator {
+  margin-top: 16px;
+}

@@ -1,0 +1,127 @@
+<div class="container">
+  <div class="pokedex">
+    <button class="circle blue" (click)="turnOnScreen()">
+      <img src="assets/game-on.webp" alt="TurnOn" />
+    </button>
+    <button
+      class="circle yellow"
+      (click)="toggleFavorite(pokemonList[currentPokemonIndex]?.id)"
+    >
+      <img src="assets/star.png" alt="Favorite" />
+    </button>
+
+    <img src="assets/pokeball.png" alt="Pokeball" class="pokeball" />
+    <div class="screen" [ngClass]="{ on: isScreenOn, off: !isScreenOn }">
+      <div *ngIf="showTitle; else pokemonContent" class="blink title">
+        <h2 class="title">Pokedex</h2>
+      </div>
+      <ng-template #pokemonContent>
+        <div *ngIf="showDetails" class="pokemonDetails">
+          <div class="detailsContainer">
+            <!-- Mostrar la imagen del Pokémon -->
+            <img
+              *ngIf="pokemonDetails.sprites.front_default"
+              [src]="pokemonDetails.sprites.front_default"
+              alt="{{ pokemonDetails.name }} image"
+              class="pokemonDetailImage"
+            />
+            <div class="pokemonData">
+              <div class="pokemonTitle">
+                <span>{{ getFormattedPokemonCode(pokemonCode) }}</span>
+                <span>{{ pokemonName.toUpperCase() }}</span>
+                <img
+                  *ngIf="isFavorite(pokemonList[currentPokemonIndex]?.id)"
+                  src="assets/star-filled.png"
+                  alt="Favorite Star"
+                  class="favorite-star-detail"
+                />
+              </div>
+
+              <div class="pokemonTypes">
+                <ul>
+                  <li
+                    *ngFor="let type of types"
+                    class="pokemonType"
+                    [ngClass]="'pokemonType--' + type.toLowerCase()"
+                  >
+                    {{ type.toUpperCase() }}
+                  </li>
+                </ul>
+              </div>
+
+              <div class="pokemonOtherDetails">
+                <div>
+                  <strong>Altura:</strong>
+                  <span>{{ pokemonDetails.height / 10 }} m.</span>
+                </div>
+                <div>
+                  <strong>Peso:</strong>
+                  <span>{{ pokemonDetails.weight / 10 }} kg.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="pokemonDescription">{{ pokemonDetails.description }}</p>
+        </div>
+
+        <div
+          *ngIf="!showDetails && !showTitle && isScreenOn"
+          class="pokemonContainer"
+        >
+          <span class="pokemonCode">{{
+            getFormattedPokemonCode(pokemonCode)
+          }}</span>
+          <img
+            *ngIf="pokemonImage"
+            [src]="pokemonImage"
+            alt="Pokemon"
+            class="pokemonImage"
+          />
+
+          <span class="pokemonName"
+            >{{ pokemonName
+            }}<img
+              *ngIf="isFavorite(pokemonList[currentPokemonIndex]?.id)"
+              src="assets/star-filled.png"
+              alt="Favorite Star"
+              class="favorite-star"
+          /></span>
+        </div>
+      </ng-template>
+
+      <!-- Flechas de navegación -->
+      <div
+        *ngIf="
+          isScreenOn && !showTitle && !showDetails && currentPokemonIndex > 0
+        "
+        class="arrow-left"
+        (click)="changePokemon(-1)"
+      >
+        <img src="assets/arrow-left.png" alt="Arrow" class="arrow-left" />
+      </div>
+      <div
+        *ngIf="isScreenOn && !showTitle && !showDetails"
+        class="arrow-right"
+        (click)="changePokemon(1)"
+      >
+        <img src="assets/arrow-right.png" alt="Arrow" class="arrow-right" />
+      </div>
+    </div>
+    <button class="detailsButton green" (click)="toggleDetails()">
+      <img src="assets/info.png" alt="Details" />
+    </button>
+    <div class="d-pad">
+      <button class="d-pad-vertical">
+        <div class="padButton"></div>
+        <div class="padButton"></div>
+      </button>
+      <button class="d-pad-horizontal">
+        <div class="padButton" (click)="changePokemon(-1)"></div>
+        <div class="padButton" (click)="changePokemon(1)"></div>
+      </button>
+    </div>
+    <button class="audioButton">
+      <img src="assets/audio.jpg" alt="Audio" (click)="playSound()" />
+    </button>
+  </div>
+</div>

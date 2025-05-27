@@ -1,0 +1,25 @@
+<main class="mainContainer">
+  <div class="loginContainer">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="loginForm">
+      <h2>Iniciar sesión</h2>
+      <label for="user">Usuario</label>
+      <input
+        type="text"
+        id="user"
+        name="user"
+        formControlName="user"
+        autocomplete="off"
+      />
+      <label for="pass">Contraseña</label>
+      <input
+        type="password"
+        id="pass"
+        name="pass"
+        formControlName="pass"
+        autocomplete="off"
+      />
+      <button type="submit" (click)="obtenerDatos()">Ingresar</button>
+      <button type="button" (click)="toRegister()">Registrarse</button>
+    </form>
+  </div>
+</main>

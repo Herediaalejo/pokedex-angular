@@ -1,0 +1,81 @@
+<main class="mainContainer">
+  <div class="registerContainer">
+    <form
+      [formGroup]="form"
+      class="registerForm"
+      (ngSubmit)="openConfirmDialog()"
+    >
+      <h2>Registrar cuenta</h2>
+      <div class="formDataContainer">
+        <div class="flexContainer">
+          <div class="dataContainer">
+            <label for="email">Correo electrónico</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              formControlName="email"
+              autocomplete="off"
+            />
+          </div>
+          <div class="dataContainer">
+            <label for="age">Edad</label>
+            <input
+              type="number"
+              id="age"
+              name="age"
+              formControlName="age"
+              autocomplete="off"
+            />
+          </div>
+          <div class="dataContainer">
+            <label for="tel">Teléfono</label>
+            <input
+              type="text"
+              id="tel"
+              name="tel"
+              formControlName="tel"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+        <div class="flexContainer">
+          <div class="dataContainer">
+            <label for="user">Nombre de usuario</label>
+            <input
+              type="text"
+              id="user"
+              name="user"
+              formControlName="username"
+              autocomplete="off"
+            />
+          </div>
+          <div class="dataContainer">
+            <label for="pass">Contraseña</label>
+            <input
+              type="password"
+              id="pass"
+              name="pass"
+              formControlName="password"
+              autocomplete="off"
+            />
+          </div>
+          <div class="dataContainer">
+            <label for="repeatPass">Confirmar contraseña</label>
+            <input
+              type="password"
+              id="repeatPass"
+              name="repeatPass"
+              formControlName="repeatPassword"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="buttonContainer">
+        <button type="button" (click)="toLogin()">← Iniciar sesión</button>
+        <button type="submit">Registrar</button>
+      </div>
+    </form>
+  </div>
+</main>

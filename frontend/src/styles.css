@@ -1,0 +1,90 @@
+body {
+  font-family: "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.texto {
+  font-size: 3rem; /* 48px */
+}
+
+.mainContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-image: url("https://wallpapers.com/images/featured/pokemon-hd-fazqcs1tmwwte1ap.jpg");
+}
+
+.loginContainer {
+  background: linear-gradient(
+    127deg,
+    rgba(255, 37, 37, 1) 0%,
+    rgba(255, 0, 0, 1) 12%,
+    rgba(255, 212, 212, 1) 53%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  width: 28rem;
+  padding: 1rem; /* 16px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.25rem; /* 20px */
+  box-shadow: 0 0 0.625rem black; /* 10px */
+}
+
+.loginForm {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem; /* 10px */
+  align-items: center;
+  font-size: 1.5rem; /* 24px */
+}
+
+.loginForm label {
+  font-weight: 600;
+}
+
+.loginForm input {
+  font-size: 1.3rem; /* 20.8px */
+  border: none;
+  border-radius: 0.625rem; /* 10px */
+  padding: 0.625rem 1.25rem; /* 10px 20px */
+  box-shadow: 0 0 0.125rem black; /* 2px */
+}
+
+.loginForm input:focus {
+  outline: none;
+}
+
+.loginForm button {
+  font-family: "Quicksand";
+  font-size: 1.5rem; /* 24px */
+  padding: 1rem; /* 16px */
+  border: none;
+  border-radius: 0.625rem; /* 10px */
+  font-weight: 500;
+  margin-top: 1.875rem; /* 30px */
+  cursor: pointer;
+  box-shadow: 0 0 0.125rem black; /* 2px */
+}
+
+.loginForm button:hover {
+  background-color: #cfffd2;
+}
+
+@media (max-width: 1600px) {
+  html {
+    font-size: 14px; /* Ajusta el tamaño base para reducir las rems en pantallas más pequeñas */
+  }
+}
